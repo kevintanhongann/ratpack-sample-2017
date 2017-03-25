@@ -9,5 +9,30 @@ ratpack {
     get {
       render 'Hej Verden 2'
     }
+
+    prefix('item') {
+
+      get {
+        //get the list of items
+        render 'get list of items'
+      }
+
+      get(':id'){
+        render 'get item '+pathTokens.id
+      }
+
+      get('update/:id?'){
+
+      }
+
+      get('create') {
+        render 'create item'
+      }
+
+      post('save'){
+
+      }
+    }
+
   }
 }
