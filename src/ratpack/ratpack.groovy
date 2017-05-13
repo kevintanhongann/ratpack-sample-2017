@@ -1,4 +1,6 @@
 // @Grab('io.ratpack:ratpack-groovy:1.4.5')
+
+import static ratpack.groovy.Groovy.groovyTemplate
 import static ratpack.groovy.Groovy.ratpack
 
 ratpack {
@@ -14,7 +16,8 @@ ratpack {
 
       get {
         //get the list of items
-        render 'get list of items'
+//        render 'get list of items'
+        render groovyTemplate('welcome.html')
       }
 
       get(':id'){
@@ -32,6 +35,10 @@ ratpack {
       post('save'){
 
       }
+    }
+
+    prefix('api'){
+
     }
 
   }
